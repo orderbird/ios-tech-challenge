@@ -24,6 +24,7 @@ Some guidelines:
 
 - Showcase your abilities, and use the task to demonstrate your idea of best practices, regarding coding style, project structure, patterns, design, etc.
 - Don't use third party libraries.
+- please do not rewrite the app completely in SWIFT ;-) (as we are more curious on how you work with the objective C codebase)
 - There is no right or wrong solution, as long as it is your solution.
 - If you only have time to do one thing please do it as good as you possible can. It is better to have a nice but incomplete solution rather than a mediocre "feature complete" one. We want to get a good impression of your abilities.
 - Be prepared to describe your work in detail.
