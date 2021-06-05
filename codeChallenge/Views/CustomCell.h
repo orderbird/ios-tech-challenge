@@ -13,4 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *imageTitleCell;
 @property (weak, nonatomic) IBOutlet UILabel *imageSubtitleCell;
 
+
+- (void)setDisplay:(nullable PhotosModal *)display;
+
 @end

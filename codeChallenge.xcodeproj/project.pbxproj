@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0745256A266A3BA800342E43 /* RestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07452569266A3BA800342E43 /* RestApi.swift */; };
+		074C69BE266B40E700E82DBE /* CommonMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 074C69BD266B40E700E82DBE /* CommonMethods.m */; };
+		074C69C1266B568500E82DBE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 074C69C0266B568500E82DBE /* .gitignore */; };
+		0759896926689BA0002129B1 /* RestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0759896826689BA0002129B1 /* RestClass.m */; };
+		075989722668A309002129B1 /* PhotosModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 075989712668A309002129B1 /* PhotosModal.m */; };
+		0764840C2668EDEB00022B6F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0764840B2668EDEB00022B6F /* DetailViewController.m */; };
 		3E15BBE4208754FE0029597E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E15BBE3208754FE0029597E /* AppDelegate.m */; };
 		3E15BBE7208754FE0029597E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E15BBE6208754FE0029597E /* ViewController.m */; };
 		3E15BBEA208754FE0029597E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E15BBE8208754FE0029597E /* Main.storyboard */; };
@@ -18,6 +24,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07452568266A3BA800342E43 /* codeChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "codeChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
+		07452569266A3BA800342E43 /* RestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestApi.swift; sourceTree = "<group>"; };
+		074C69BC266B40E700E82DBE /* CommonMethods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonMethods.h; sourceTree = "<group>"; };
+		074C69BD266B40E700E82DBE /* CommonMethods.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonMethods.m; sourceTree = "<group>"; };
+		074C69C0266B568500E82DBE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0759896726689BA0002129B1 /* RestClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestClass.h; sourceTree = "<group>"; };
+		0759896826689BA0002129B1 /* RestClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestClass.m; sourceTree = "<group>"; };
+		0759896B26689E22002129B1 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		075989702668A309002129B1 /* PhotosModal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosModal.h; sourceTree = "<group>"; };
+		075989712668A309002129B1 /* PhotosModal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosModal.m; sourceTree = "<group>"; };
+		076484072668C31600022B6F /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		0764840A2668EDEB00022B6F /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		0764840B2668EDEB00022B6F /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		3E15BBDF208754FE0029597E /* codeChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = codeChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E15BBE2208754FE0029597E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3E15BBE3208754FE0029597E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -44,9 +63,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0759896626689B3B002129B1 /* ApiManager */ = {
+			isa = PBXGroup;
+			children = (
+				0759896B26689E22002129B1 /* Constant.h */,
+				0759896726689BA0002129B1 /* RestClass.h */,
+				0759896826689BA0002129B1 /* RestClass.m */,
+				07452569266A3BA800342E43 /* RestApi.swift */,
+			);
+			path = ApiManager;
+			sourceTree = "<group>";
+		};
+		0759896D2668A13F002129B1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3E15BBE5208754FE0029597E /* ViewController.h */,
+				3E15BBE6208754FE0029597E /* ViewController.m */,
+				0764840A2668EDEB00022B6F /* DetailViewController.h */,
+				0764840B2668EDEB00022B6F /* DetailViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0759896E2668A170002129B1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3E15BBF8208774B10029597E /* CustomCell.h */,
+				3E15BBF9208774B10029597E /* CustomCell.m */,
+				3E15BBFB20879B4B0029597E /* CustomCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0759896F2668A1B1002129B1 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				075989702668A309002129B1 /* PhotosModal.h */,
+				075989712668A309002129B1 /* PhotosModal.m */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		076484062668C30A00022B6F /* PCH */ = {
+			isa = PBXGroup;
+			children = (
+				076484072668C31600022B6F /* PrefixHeader.pch */,
+			);
+			path = PCH;
+			sourceTree = "<group>";
+		};
 		3E15BBD6208754FE0029597E = {
 			isa = PBXGroup;
 			children = (
+				074C69C0266B568500E82DBE /* .gitignore */,
 				3E15BBE1208754FE0029597E /* codeChallenge */,
 				3E15BBE0208754FE0029597E /* Products */,
 			);
@@ -63,18 +132,21 @@
 		3E15BBE1208754FE0029597E /* codeChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				076484062668C30A00022B6F /* PCH */,
+				0759896F2668A1B1002129B1 /* Modal */,
+				0759896626689B3B002129B1 /* ApiManager */,
+				0759896E2668A170002129B1 /* Views */,
+				0759896D2668A13F002129B1 /* ViewControllers */,
 				3E15BBE2208754FE0029597E /* AppDelegate.h */,
 				3E15BBE3208754FE0029597E /* AppDelegate.m */,
-				3E15BBE5208754FE0029597E /* ViewController.h */,
-				3E15BBE6208754FE0029597E /* ViewController.m */,
-				3E15BBF8208774B10029597E /* CustomCell.h */,
-				3E15BBF9208774B10029597E /* CustomCell.m */,
-				3E15BBFB20879B4B0029597E /* CustomCell.xib */,
 				3E15BBE8208754FE0029597E /* Main.storyboard */,
 				3E15BBEB208754FE0029597E /* Assets.xcassets */,
 				3E15BBED208754FE0029597E /* LaunchScreen.storyboard */,
 				3E15BBF0208754FE0029597E /* Info.plist */,
 				3E15BBF1208754FE0029597E /* main.m */,
+				07452568266A3BA800342E43 /* codeChallenge-Bridging-Header.h */,
+				074C69BC266B40E700E82DBE /* CommonMethods.h */,
+				074C69BD266B40E700E82DBE /* CommonMethods.m */,
 			);
 			path = codeChallenge;
 			sourceTree = "<group>";
@@ -110,6 +182,7 @@
 				TargetAttributes = {
 					3E15BBDE208754FE0029597E = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1210;
 					};
 				};
 			};
@@ -136,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				074C69C1266B568500E82DBE /* .gitignore in Resources */,
 				3E15BBEF208754FE0029597E /* LaunchScreen.storyboard in Resources */,
 				3E15BBEC208754FE0029597E /* Assets.xcassets in Resources */,
 				3E15BBFC20879B4B0029597E /* CustomCell.xib in Resources */,
@@ -150,10 +224,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0745256A266A3BA800342E43 /* RestApi.swift in Sources */,
+				074C69BE266B40E700E82DBE /* CommonMethods.m in Sources */,
+				075989722668A309002129B1 /* PhotosModal.m in Sources */,
+				0759896926689BA0002129B1 /* RestClass.m in Sources */,
 				3E15BBE7208754FE0029597E /* ViewController.m in Sources */,
 				3E15BBF2208754FE0029597E /* main.m in Sources */,
 				3E15BBFA208774B10029597E /* CustomCell.m in Sources */,
 				3E15BBE4208754FE0029597E /* AppDelegate.m in Sources */,
+				0764840C2668EDEB00022B6F /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,12 +293,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "/Users/asthayadav/Documents/Orderbird-coding-task/ios-tech-challenge/codeChallenge/PCH/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -230,6 +311,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IBC_MODULE = codeChallenge;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -272,16 +354,19 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "/Users/asthayadav/Documents/Orderbird-coding-task/ios-tech-challenge/codeChallenge/PCH/PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IBC_MODULE = codeChallenge;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -293,7 +378,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 56ETNADXPZ;
 				INFOPLIST_FILE = codeChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -302,6 +389,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nanosuarez.codeChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "codeChallenge/codeChallenge-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -310,7 +400,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 56ETNADXPZ;
 				INFOPLIST_FILE = codeChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -319,6 +411,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nanosuarez.codeChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "codeChallenge/codeChallenge-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

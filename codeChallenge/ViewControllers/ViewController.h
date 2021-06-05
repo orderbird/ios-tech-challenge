@@ -7,8 +7,12 @@
 //
 
 @import UIKit;
+//@class RestApi;
+#import "codeChallenge-Swift.h"
 
 @interface ViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmantControl;
+@property (weak, nonatomic) IBOutlet UISwitch *switchLatestOldest;
 
 
 @end
