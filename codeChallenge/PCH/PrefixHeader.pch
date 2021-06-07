@@ -1,0 +1,23 @@
+//
+//  PrefixHeader.pch
+//  codeChallenge
+//
+//  Created by Astha yadav on 03/06/21.
+//  Copyright © 2021 Fernando Suárez. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "AppDelegate.h"
+#import "Constant.h"
+#import "PhotosModal.h"
+#import "CustomCell.h"
+#import "FoodItemListVC.h"
+#import "DetailViewController.h"
+#import "codeChallenge-Swift.h"
+#import "CommonMethods.h"
+
+
+#endif /* PrefixHeader_pch */
+
