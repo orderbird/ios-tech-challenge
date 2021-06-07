@@ -1,29 +1,31 @@
 //
-//  ViewController.m
+//  FoodItemListVC.m
 //  codeChallenge
 //
 //  Created by Nano Suarez on 18/04/2018.
 //  Copyright © 2018 Fernando Suárez. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "FoodItemListVC.h"
 
-@interface ViewController (){
+@interface FoodItemListVC (){
     NSMutableArray *photosArray;
     NSInteger pageNo,totalPage;
     BOOL isFirstLoad;
     NSString *sortKey;
     RestApi *restapi;
     NSString *sortOrder;
+    
 }
 
 @property (nonatomic, readwrite) NSArray *photos;
 @property (nonatomic) NSInteger imagePageOffset;
 @property (nonatomic, copy) void (^ reloadBlock)(void);
+@property (nonatomic, weak) id delegate;
 
 @end
 
-@implementation ViewController
+@implementation FoodItemListVC
 
 - (void)viewDidLoad {
     
@@ -67,13 +69,12 @@
             [photosArray removeAllObjects];
         }
     }
-    [restapi getFlikerPhotosApiWithPageNo:pageNo perPageCount:self.imagePageOffset sort:sortKey];
+    [restapi getFoodItemListWithPageNo:pageNo perPageCount:self.imagePageOffset sort:sortKey];
 }
 
 #pragma mark:- getJSON
 -(void)getJSON:(NSNotification*)notification {
     NSDictionary *dict = [notification userInfo];
-    NSLog(@"JSON---%@",dict);
     
     NSDictionary * dictPhotos = [dict valueForKey:@"photos"];
     NSArray *arrPhoto = [dictPhotos valueForKey:@"photo"];
@@ -105,19 +106,21 @@
 #pragma mark:-segmentControlClick
 - (void)segmentControlClick:(UISegmentedControl *)segment
 {
-    //date-posted-asc, date-posted-desc, date-taken-asc, date-taken-desc, interestingness-desc, interestingness-asc, and relevance.
     pageNo = 1;
-    if(segment.selectedSegmentIndex == 0)
-    {
-        sortKey = @"date-posted-";
-    }else if(segment.selectedSegmentIndex == 1)
-    {
-        sortKey = @"date-taken-";
-    }else if(segment.selectedSegmentIndex == 2)
-    {
-        sortKey = @"interestingness-";
+    switch (segment.selectedSegmentIndex) {
+        case 0:
+            sortKey = @"date-posted";
+            break;
+        case 1:
+            sortKey = @"date-taken";
+            break;
+        case 2:
+            sortKey = @"interestingness";
+            break;
+        default:
+            break;
     }
-    sortKey = [NSString stringWithFormat:@"%@%@",sortKey,sortOrder];
+    sortKey = [NSString stringWithFormat:@"%@-%@",sortKey,sortOrder];
 
     [CommonMethods activityIndicatorStart:self.view];
     [self loadFlikerPhotos:pageNo sort:sortKey];
@@ -159,6 +162,7 @@
     }
     
 }
+
 
 
 @end

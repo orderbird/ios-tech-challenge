@@ -26,7 +26,6 @@
         if ( data == nil )
             return;
         dispatch_async(dispatch_get_main_queue(), ^{
-            // WARNING: is the cell still using the same data by this point??
             self.imageCell.image = [UIImage imageWithData: data];
         });
        

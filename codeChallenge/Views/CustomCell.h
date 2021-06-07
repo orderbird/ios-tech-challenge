@@ -9,11 +9,14 @@
 @import UIKit;
 
 @interface CustomCell : UITableViewCell
+NS_ASSUME_NONNULL_BEGIN
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageCell;
 @property (weak, nonatomic) IBOutlet UILabel *imageTitleCell;
 @property (weak, nonatomic) IBOutlet UILabel *imageSubtitleCell;
 
-
 - (void)setDisplay:(nullable PhotosModal *)display;
+
+NS_ASSUME_NONNULL_END
 
 @end

@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PhotosModal : NSObject
 
-
 @property(strong,nonatomic) NSString * photoId;
 @property(nonatomic,strong) NSString * title;
 @property(nonatomic,strong) NSString * _content;

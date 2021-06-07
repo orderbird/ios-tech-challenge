@@ -18,7 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
    
     [self setDetailInfo];
 }
@@ -37,7 +36,6 @@
         if ( data == nil )
             return;
         dispatch_async(dispatch_get_main_queue(), ^{
-            // WARNING: is the cell still using the same data by this point??
             self.imageDetail.image = [UIImage imageWithData: data];
         });
        

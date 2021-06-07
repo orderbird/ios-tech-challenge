@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--What to eat-->
+        <!--Food Options-->
         <scene sceneID="nw0-K6-z04">
             <objects>
-                <tableViewController storyboardIdentifier="ViewController" id="dMw-tS-P0T" customClass="ViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FoodItemListVC" id="dMw-tS-P0T" customClass="FoodItemListVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zdr-J3-qGg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,6 +59,7 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="ojN-6U-2tP" firstAttribute="top" secondItem="mbn-mf-EEr" secondAttribute="top" constant="4" id="2m0-p3-uti"/>
+                                <constraint firstItem="fNK-pY-Ehs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SDC-G7-coh" secondAttribute="trailing" priority="10" constant="148" id="9GD-Lj-435"/>
                                 <constraint firstItem="fNK-pY-Ehs" firstAttribute="centerY" secondItem="ojN-6U-2tP" secondAttribute="centerY" id="Hbu-Xk-mCq"/>
                                 <constraint firstItem="SDC-G7-coh" firstAttribute="leading" secondItem="mbn-mf-EEr" secondAttribute="leading" constant="10" id="Ndn-gD-BzK"/>
                                 <constraint firstAttribute="trailing" secondItem="ojN-6U-2tP" secondAttribute="trailing" constant="18" id="Qw8-JX-Uoo"/>
@@ -85,7 +86,7 @@
                             <outlet property="delegate" destination="dMw-tS-P0T" id="4lW-YT-UTd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="What to eat" id="ial-UC-Nje"/>
+                    <navigationItem key="navigationItem" title="Food Options" id="ial-UC-Nje"/>
                     <connections>
                         <outlet property="segmantControl" destination="zy1-nZ-JQp" id="bwu-PF-UJz"/>
                         <outlet property="switchLatestOldest" destination="ojN-6U-2tP" id="xHE-wj-wMb"/>
