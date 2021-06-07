@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CommonMethods : NSObject
 
 + (NSString *)stringByStrippingHTML:(NSString *)inputString;
++(void)activityIndicatorStart:(UIView*)view;
++(void)activityIndicatorStop:(UIView*)view;
 
 @end
 

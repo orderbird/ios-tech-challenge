@@ -12,7 +12,6 @@
 #import "AppDelegate.h"
 #import "Constant.h"
 #import "PhotosModal.h"
-#import "RestClass.h"
 #import "CustomCell.h"
 #import "ViewController.h"
 #import "DetailViewController.h"

@@ -8,13 +8,13 @@
 
 #import "ViewController.h"
 
-
 @interface ViewController (){
     NSMutableArray *photosArray;
     NSInteger pageNo,totalPage;
     BOOL isFirstLoad;
     NSString *sortKey;
     RestApi *restapi;
+    NSString *sortOrder;
 }
 
 @property (nonatomic, readwrite) NSArray *photos;
@@ -34,9 +34,9 @@
     
     [self uiSetUp];
     [self initialData];
-    
+
+    [CommonMethods activityIndicatorStart:self.view];
     [self loadFlikerPhotos:pageNo sort:sortKey];
-    
     
 }
 
@@ -47,6 +47,7 @@
     pageNo = 1;
     sortKey = @"date-posted-desc";
     isFirstLoad = YES;
+    sortOrder = @"desc";
 }
 
 #pragma mark:- uiSetUp
@@ -73,6 +74,7 @@
 -(void)getJSON:(NSNotification*)notification {
     NSDictionary *dict = [notification userInfo];
     NSLog(@"JSON---%@",dict);
+    
     NSDictionary * dictPhotos = [dict valueForKey:@"photos"];
     NSArray *arrPhoto = [dictPhotos valueForKey:@"photo"];
     totalPage = [[dictPhotos valueForKey:@"pages"] integerValue];
@@ -85,6 +87,7 @@
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        [CommonMethods activityIndicatorStop:self.view];
         [self.tableView reloadData];
     });
     
@@ -92,7 +95,11 @@
 
 #pragma mark:- switchClick
 - (IBAction)switchClick:(id)sender {
-    
+    if ([_switchLatestOldest isOn]){
+        sortOrder = @"desc";
+    }else{
+        sortOrder = @"asc";
+    }
 }
 
 #pragma mark:-segmentControlClick
@@ -102,17 +109,17 @@
     pageNo = 1;
     if(segment.selectedSegmentIndex == 0)
     {
-        sortKey = @"date-posted-desc";
-    }
-    else if(segment.selectedSegmentIndex == 1)
+        sortKey = @"date-posted-";
+    }else if(segment.selectedSegmentIndex == 1)
     {
-        sortKey = @"date-taken-desc";
-    }
-    else if(segment.selectedSegmentIndex == 2)
+        sortKey = @"date-taken-";
+    }else if(segment.selectedSegmentIndex == 2)
     {
-        sortKey = @"interestingness-desc";
+        sortKey = @"interestingness-";
     }
-    
+    sortKey = [NSString stringWithFormat:@"%@%@",sortKey,sortOrder];
+
+    [CommonMethods activityIndicatorStart:self.view];
     [self loadFlikerPhotos:pageNo sort:sortKey];
     
 }
@@ -150,30 +157,8 @@
             [self loadFlikerPhotos:pageNo sort:sortKey];
         }
     }
-}
-
-#pragma mark: API Response
--(void)passRequestedArray:(NSMutableArray *)dataArray WithId:(NSString *)ID {
-    if([ID isEqualToString:@"photos_list"]) {
-        NSDictionary * dictPhotos = [dataArray valueForKey:@"photos"];
-        NSArray *arrPhoto = [dictPhotos valueForKey:@"photo"];
-        totalPage = [[dictPhotos valueForKey:@"pages"] integerValue];
-        pageNo++;
-        isFirstLoad = NO;
-        for (int i = 0; i < [arrPhoto count]; i++) {
-            NSDictionary *json = [arrPhoto objectAtIndex: i];
-            PhotosModal* p = [[PhotosModal alloc] initWithJSONString:json];
-            [photosArray addObject:p];
-        }
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-        });
-    }
-}
-
--(void)errorMessageWithRetry:(NSString *)errorMsg WithId:(NSString *)ID {
     
 }
+
 
 @end

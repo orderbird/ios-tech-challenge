@@ -8,4 +8,6 @@
 
 
 
-#define FlickrAPIKey @"2ed35a9f4fda03bc96e73dbd03602780"
+#define FLICKR_APIKEY @"2ed35a9f4fda03bc96e73dbd03602780"
+#define BASE_URL = @"https://api.flickr.com/services/rest/?"
+

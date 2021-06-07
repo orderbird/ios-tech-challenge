@@ -14,6 +14,7 @@
 {
     self = [super init];
     if (self) {
+        self.photoId = [dict valueForKey:@"id"];
         self.title = [dict valueForKey:@"title"];
         self.url_t = [dict valueForKey:@"url_t"];
         self.url_l = [dict valueForKey:@"url_l"];
@@ -22,6 +23,7 @@
         self.lastupdate = [dict valueForKey:@"lastupdate"];
         self.datetaken = [dict valueForKey:@"datetaken"];
         self._content = [[dict valueForKey:@"description"] valueForKey:@"_content"];
+        self.views = [dict valueForKey:@"views"];
     }
     return self;
 }

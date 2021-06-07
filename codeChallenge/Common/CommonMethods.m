@@ -10,6 +10,8 @@
 
 @implementation CommonMethods
 
+UIActivityIndicatorView *indicator;
+
 + (NSString *)stringByStrippingHTML:(NSString *)inputString
 {
     NSMutableString *outString;
@@ -30,6 +32,22 @@
     }
 
     return outString;
+}
+
++(void)activityIndicatorStart:(UIView*)view{
+    indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    indicator.hidesWhenStopped = YES;
+    indicator.frame = CGRectMake((view.frame.size.width/2)-15, (view.frame.size.height/2)-100, 30, 30);
+    
+    [view addSubview:indicator];
+    [view isUserInteractionEnabled];
+    [indicator startAnimating];
+    view.userInteractionEnabled = NO;
+}
+
++(void)activityIndicatorStop:(UIView*)view{
+    [indicator stopAnimating];
+    view.userInteractionEnabled = YES;
 }
 
 @end

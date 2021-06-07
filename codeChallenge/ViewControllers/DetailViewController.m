@@ -13,32 +13,21 @@
 @end
 
 @implementation DetailViewController
-@synthesize labelTitle,labelOwnarName,labelDescription,labelNoOfViews,labelNoOfFavourite,labelNumberOfComments;
+@synthesize labelTitle,labelOwnarName,labelDescription,labelNoOfViews;
 @synthesize photoDetail;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-   
    
     [self setDetailInfo];
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:true];
-    
-    NSLog(@"Astha%f",_scrollView.frame.size.height);
-  //  _scrollView.scrollEnabled=YES;
-    _scrollView.contentSize=CGSizeMake(self.contentView.frame.size.width, 2000);
-    
-    NSLog(@"Yadav%f",_scrollView.frame.size.height);
-    NSLog(@"Yadav%f",_contentView.frame.size.height);
-}
 
+#pragma mark:- setDetailInfo
 -(void)setDetailInfo{
-    
-    labelOwnarName.text = [NSString stringWithFormat:@"Owner name: %@",photoDetail.ownername];
+    labelNoOfViews.text = [NSString stringWithFormat:@"Views : %@",photoDetail.views];
+    labelOwnarName.text = [NSString stringWithFormat:@"Owner name : %@",photoDetail.ownername];
     labelTitle.text = photoDetail.title;
     NSString*strContent =  [CommonMethods stringByStrippingHTML:photoDetail._content];
     labelDescription.text = strContent;
@@ -53,7 +42,6 @@
         });
        
     });
-    
 }
 
 

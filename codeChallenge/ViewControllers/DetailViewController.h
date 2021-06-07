@@ -11,20 +11,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DetailViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
-@property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageDetail;
 @property (weak, nonatomic) IBOutlet UILabel *labelNoOfViews;
-@property (weak, nonatomic) IBOutlet UILabel *labelNoOfFavourite;
-@property (weak, nonatomic) IBOutlet UILabel *labelNumberOfComments;
 @property (weak, nonatomic) IBOutlet UILabel *labelOwnarName;
 @property (weak, nonatomic) IBOutlet UILabel *labelDescription;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 
 @property(strong,nonatomic)PhotosModal* photoDetail;
-
-
 
 @end
 
